@@ -1,14 +1,26 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
-  <body>
+
+<head>
+  <title>
+    <%= title %>
+  </title>
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+
+<body>
   <form action="/" method="post">
     <label>Add task</label>
-    <input required type="text" name="add" placeholder="task name"/>
-    <input type="submit" value="Add"/>
+    <input required type="text" name="add" placeholder="task name" />
+    <input type="submit" value="Add" />
   </form>
+  <ul>
+    <% for(let todo of todos){ %>
+      <li><span>
+          <%= todo.content %>
+        </span></li>
+      <% } %>
+  </ul>
 </body>
+
 </html>
